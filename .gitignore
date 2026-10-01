@@ -1,0 +1,7 @@
+# Original source photos are retained locally but not published.
+assets/originals/
+
+# Local/editor files
+.vscode/
+.DS_Store
+Thumbs.db
