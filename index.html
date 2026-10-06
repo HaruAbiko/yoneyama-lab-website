@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="青山学院大学 米山研究室。制御理論、DWA、UAV、AIを軸に研究に取り組んでいます。">
-  <title>米山研究室 | 青山学院大学</title>
+  <meta name="description" content="青山学院大学 米山研究室UAVグループ。固定翼UAVとPPGを対象に、飛行制御から実機飛行試験まで取り組んでいます。">
+  <title>米山研究室 UAVグループ | 青山学院大学</title>
   <style>
     :root {
       --ink: #12212b;
@@ -337,6 +337,7 @@
       border-top: 1px solid var(--line);
       border-left: 1px solid var(--line);
     }
+    .faculty-grid-single { grid-template-columns: 1fr; }
     .faculty-card {
       min-height: 235px;
       padding: 36px 40px;
@@ -527,13 +528,13 @@
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="米山研究室 ホーム">
+      <a class="brand" href="#top" aria-label="米山研究室 UAVグループ ホーム">
         <span class="brand-mark" aria-hidden="true">Y</span>
-        <span class="brand-text">米山研究室<small>Aoyama Gakuin University</small></span>
+        <span class="brand-text">米山研究室 UAVグループ<small>Aoyama Gakuin University</small></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">メニュー</button>
       <nav class="nav" id="global-nav" aria-label="メインナビゲーション">
-        <a href="#research">研究分野</a>
+        <a href="#research">UAV研究</a>
         <a href="#aerial">固定翼・PPG</a>
         <a href="#scenes">研究の様子</a>
         <a href="#presentations">研究発表</a>
@@ -547,17 +548,17 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">Yoneyama Laboratory</p>
-          <h1 id="hero-title">知能と制御で、<br>未来を拓く。</h1>
-          <p class="hero-copy">現代制御・システム制御、Dynamic Window Approach、UAV、AI。4つの研究領域を横断し、理論から実装・実験へとつながる研究に取り組みます。</p>
+          <p class="eyebrow">Yoneyama Laboratory UAV Group</p>
+          <h1 id="hero-title">飛ばす。測る。<br>次の飛行へ。</h1>
+          <p class="hero-copy">固定翼UAVとPPGを対象に、機体のモデル化、飛行制御、システム実装、屋外での飛行試験までを一つの流れとして取り組みます。</p>
         </div>
         <aside class="hero-side" aria-label="研究分野一覧">
-          <p class="hero-side-label">RESEARCH PILLARS</p>
+          <p class="hero-side-label">UAV RESEARCH</p>
           <ol class="pillar-list">
-            <li><a href="#control"><span>01</span>制御理論</a></li>
-            <li><a href="#dwa"><span>02</span>DWA</a></li>
-            <li><a href="#uav"><span>03</span>UAV</a></li>
-            <li><a href="#ai"><span>04</span>AI</a></li>
+            <li><a href="#research"><span>01</span>飛行制御</a></li>
+            <li><a href="research/fixed-wing.html"><span>02</span>固定翼UAV</a></li>
+            <li><a href="research/ppg.html"><span>03</span>PPG</a></li>
+            <li><a href="#scenes"><span>04</span>実機飛行試験</a></li>
           </ol>
         </aside>
       </div>
@@ -567,10 +568,10 @@
       <div class="wrap">
         <div class="section-head">
           <p class="section-index">01 / Our Approach</p>
-          <h2 id="intro-title">理論を深め、<br>現実のシステムへ。</h2>
+          <h2 id="intro-title">UAVを、理論から<br>実機まで。</h2>
         </div>
         <div class="intro-text">
-          <p>米山研究室では、現代制御・システム制御を基礎に、移動ロボットの経路計画、無人航空機、人工知能へ研究領域を広げています。それぞれの専門を独立させるのではなく、相互に結びつけながら新しい課題に挑みます。</p>
+          <p>米山研究室UAVグループでは、無人航空機の安定した自律飛行を目指し、モデル化と制御系設計、機体への実装、実環境での飛行試験を進めています。飛行データを解析し、その結果を次の設計と試験へ還元します。</p>
         </div>
       </div>
     </section>
@@ -579,28 +580,28 @@
       <div class="wrap">
         <div class="section-head">
           <p class="section-index">02 / Research</p>
-          <h2 id="research-title">4つの研究領域</h2>
+          <h2 id="research-title">UAV研究の流れ</h2>
         </div>
         <div class="research-grid">
-          <a class="research-card" id="control" href="research/control.html">
-            <span class="card-no">RESEARCH 01</span>
-            <h3>制御理論</h3>
-            <p>現代制御・システム制御を中心に、複雑なシステムの安定性と性能を両立する制御手法を研究します。</p>
+          <a class="research-card" href="research/uav.html">
+            <span class="card-no">UAV RESEARCH 01</span>
+            <h3>飛行制御</h3>
+            <p>機体運動をモデル化し、目標経路への追従と姿勢安定化を両立する制御系を設計します。</p>
           </a>
-          <a class="research-card" id="dwa" href="research/dwa.html">
-            <span class="card-no">RESEARCH 02</span>
-            <h3>DWA</h3>
-            <p>Dynamic Window Approachを用い、移動ロボットが障害物を回避しながら目標へ進むための経路計画を研究します。</p>
+          <a class="research-card" href="research/fixed-wing.html">
+            <span class="card-no">UAV RESEARCH 02</span>
+            <h3>固定翼UAV</h3>
+            <p>全翼型の固定翼機を対象に、経路追従、姿勢安定化、発進から飛行までの実機検証を行います。</p>
           </a>
-          <a class="research-card" id="uav" href="research/uav.html">
-            <span class="card-no">RESEARCH 03</span>
-            <h3>UAV</h3>
-            <p>無人航空機の解析・設計・制御・実験を通じ、実環境で機能する航空システムを探究します。</p>
+          <a class="research-card" href="research/ppg.html">
+            <span class="card-no">UAV RESEARCH 03</span>
+            <h3>PPG</h3>
+            <p>柔軟な翼を持つ機体を対象に、風外乱や機体特性の変化に対応する経路生成と飛行制御を研究します。</p>
           </a>
-          <a class="research-card" id="ai" href="research/ai.html">
-            <span class="card-no">RESEARCH 04</span>
-            <h3>AI</h3>
-            <p>学習と推論の技術を活用し、複雑なシステムの認識・判断・制御へつなげます。</p>
+          <a class="research-card" href="#scenes">
+            <span class="card-no">UAV RESEARCH 04</span>
+            <h3>実機飛行試験</h3>
+            <p>操縦、通信、計測、安全確認をチームで分担し、屋外環境で制御性能と機体挙動を確かめます。</p>
           </a>
         </div>
       </div>
@@ -699,14 +700,12 @@
       <div class="wrap">
         <div class="section-head">
           <p class="section-index">05 / Presentations</p>
-          <h2 id="presentations-title">研究発表</h2>
+          <h2 id="presentations-title">UAV研究発表</h2>
         </div>
         <div class="presentation-list">
           <article class="presentation-item"><time class="presentation-date" datetime="2026-07-01">2026.07.01</time><p class="presentation-title">パラフォイール型飛行ロボットのための3次元経路生成および実飛行環境を想定した安定化手法の提案</p><span class="presentation-venue">ROBOMECH 2026</span></article>
           <article class="presentation-item"><time class="presentation-date" datetime="2026-07-01">2026.07.01</time><p class="presentation-title">無人航空機の懸垂式重心調整とトリム推定外乱オブザーバの統合的検討による性能改善</p><span class="presentation-venue">ROBOMECH 2026</span></article>
-          <article class="presentation-item"><time class="presentation-date" datetime="2026-06-20">2026.06.20</time><p class="presentation-title">T-S Fuzzy Model-Based Control with Application to Autonomous Bicycle</p><span class="presentation-venue">15th Asian Control Conference</span></article>
-          <article class="presentation-item"><time class="presentation-date" datetime="2026-05-25">2026.05.25</time><p class="presentation-title">H∞状態フィードバック制御理論を用いた四輪車両の外乱抑制制御</p><span class="presentation-venue">第70回システム制御情報学会研究発表講演会</span></article>
-          <article class="presentation-item"><time class="presentation-date" datetime="2026-03-19">2026.03.19</time><p class="presentation-title">非線形制御理論を用いた自律走行自転車の制御</p><span class="presentation-venue">第53回知能システムシンポジウム</span></article>
+
         </div>
         <p class="source-note">掲載内容は<a href="https://raweb.jm.aoyama.ac.jp/aguhp/KgApp/k03/resid/S001800" target="_blank" rel="noopener">青山学院大学 公式研究者情報（髙橋佑徳助教）</a>を2026年10月2日に確認したものです。</p>
       </div>
@@ -715,12 +714,12 @@
     <section class="about" id="about" aria-labelledby="about-title">
       <div class="wrap about-grid">
         <div>
-          <p class="eyebrow">About the Laboratory</p>
-          <h2 id="about-title">米山研究室について</h2>
+          <p class="eyebrow">About the UAV Group</p>
+          <h2 id="about-title">米山研究室<br>UAVグループ</h2>
         </div>
         <div class="about-copy">
-          <p>青山学院大学理工学部電気電子工学科に所属し、米山淳教授と髙橋佑徳助教のもと、学生24名が4つの研究領域に取り組んでいます。</p>
-          <a class="text-link" href="about.html">研究室紹介を見る <span aria-hidden="true">→</span></a>
+          <p>青山学院大学理工学部電気電子工学科・米山研究室のUAVグループです。米山淳教授の指導のもと、学生7名が固定翼UAVとPPGの飛行制御・実機実験に取り組んでいます。</p>
+          <a class="text-link" href="about.html">UAVグループ紹介を見る <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -729,52 +728,31 @@
       <div class="wrap">
         <div class="section-head">
           <p class="section-index">06 / Members</p>
-          <h2 id="members-title">研究室の構成</h2>
+          <h2 id="members-title">UAVグループの構成</h2>
         </div>
 
-        <div class="faculty-grid" aria-label="教員">
+        <div class="faculty-grid faculty-grid-single" aria-label="指導教員">
           <article class="faculty-card">
-            <p class="faculty-role">Professor</p>
+            <p class="faculty-role">Supervisor / Professor</p>
             <h3 class="faculty-name">米山 淳</h3>
-            <p class="faculty-meta">現代制御・システム制御</p>
-          </article>
-          <article class="faculty-card">
-            <p class="faculty-role">Assistant Professor</p>
-            <h3 class="faculty-name">髙橋 佑徳</h3>
-            <p class="faculty-meta">制御・システム工学／知能機械システム／ソフトコンピューティング</p>
+            <p class="faculty-meta">UAV飛行制御・現代制御・システム制御</p>
           </article>
         </div>
-
-        <article class="faculty-profile" aria-labelledby="takahashi-profile-title">
-          <div>
-            <p class="eyebrow">Faculty Profile</p>
-            <h3 id="takahashi-profile-title">髙橋 佑徳 助教</h3>
-            <p class="profile-specialty">制御・システム工学<br>知能機械システム<br>ソフトコンピューティング</p>
-            <a class="profile-source" href="https://raweb.jm.aoyama.ac.jp/aguhp/KgApp/k03/resid/S001800" target="_blank" rel="noopener">青山学院大学 公式研究者情報 ↗</a>
-          </div>
-          <dl class="profile-details">
-            <div><dt>学歴</dt><dd>電気通信大学 情報理工学部を卒業後、同大学大学院の博士前期課程・博士後期課程を修了。</dd></div>
-            <div><dt>学位</dt><dd>博士（工学）（電気通信大学）</dd></div>
-            <div><dt>企業勤務</dt><dd>2017年4月～2021年2月　株式会社日立国際電気 機構設計部</dd></div>
-            <div><dt>現職</dt><dd>2024年4月～　青山学院大学 理工学部 電気電子工学科 助教<br>2025年2月～　電気通信大学 大学院情報理工学研究科 客員研究員</dd></div>
-            <div><dt>受賞</dt><dd>2025年9月　第33回インテリジェント・システム・シンポジウム 優秀論文賞（3次元全翼機モデルの高木・菅野ファジィシステム表現と姿勢安定化制御）</dd></div>
-          </dl>
-        </article>
 
         <div class="student-summary">
           <h3>学生構成</h3>
           <div class="student-counts" aria-label="学年別の学生数">
             <div class="student-count">
-              <span class="student-grade">B4</span>
-              <span class="student-number">12<small>名</small></span>
+              <span class="student-grade">M2</span>
+              <span class="student-number">2<small>名</small></span>
             </div>
             <div class="student-count">
               <span class="student-grade">M1</span>
-              <span class="student-number">5<small>名</small></span>
+              <span class="student-number">2<small>名</small></span>
             </div>
             <div class="student-count">
-              <span class="student-grade">M2</span>
-              <span class="student-number">7<small>名</small></span>
+              <span class="student-grade">B4</span>
+              <span class="student-number">3<small>名</small></span>
             </div>
           </div>
         </div>
@@ -790,7 +768,7 @@
         <div aria-label="ニュース一覧">
           <div class="news-row">
             <time class="news-date" datetime="">公開準備中</time>
-            <span class="news-title">研究活動や学会発表などのお知らせを掲載予定です。</span>
+            <span class="news-title">UAVグループの飛行試験や学会発表などのお知らせを掲載予定です。</span>
             <span class="tag">NEWS</span>
           </div>
         </div>
@@ -825,12 +803,12 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <div class="footer-name">青山学院大学 米山研究室</div>
+          <div class="footer-name">青山学院大学 米山研究室 UAVグループ</div>
           <p class="footer-note">理工学部 電気電子工学科／相模原キャンパス L棟401</p>
         </div>
         <a class="text-link" href="mailto:">お問い合わせ <span aria-hidden="true">→</span></a>
       </div>
-      <p class="copyright">© Yoneyama Laboratory, Aoyama Gakuin University.</p>
+      <p class="copyright">© Yoneyama Laboratory UAV Group, Aoyama Gakuin University.</p>
     </div>
   </footer>
 

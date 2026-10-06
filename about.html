@@ -3,34 +3,120 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="青山学院大学理工学部電気電子工学科 米山研究室">
-  <title>米山研究室について | 米山研究室</title>
+  <meta name="description" content="青山学院大学 米山研究室UAVグループの紹介。固定翼UAVとPPGの飛行制御・実機実験に取り組んでいます。">
+  <title>UAVグループ紹介 | 米山研究室</title>
   <style>
-    :root { --ink:#10232d; --green:#0c5148; --lime:#d7ee6d; --paper:#f4f5ef; }
+    :root {
+      --ink:#12212b; --muted:#5c6a71; --paper:#f5f6f1; --white:#fff;
+      --green:#174f45; --deep:#0c3833; --lime:#c7df9a;
+      --line:rgba(18,33,43,.15); --max:1160px;
+    }
     * { box-sizing:border-box; }
-    body { margin:0; min-height:100vh; color:var(--ink); background:var(--paper); font-family:"Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif; }
-    header { padding:22px clamp(24px,5vw,72px); border-bottom:1px solid rgba(16,35,45,.18); }
-    header a { color:var(--ink); text-decoration:none; font-weight:700; }
-    main { min-height:calc(100vh - 150px); display:grid; place-items:center; padding:80px 24px; }
-    article { width:min(860px,100%); }
-    .eyebrow { color:var(--green); font-size:12px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
-    h1 { margin:24px 0; font-family:"Yu Mincho", "Hiragino Mincho ProN", serif; font-size:clamp(44px,7vw,82px); line-height:1.15; font-weight:500; }
-    p { max-width:680px; font-size:17px; line-height:2; }
-    .back { display:inline-block; margin-top:38px; padding:15px 24px; color:white; background:var(--green); text-decoration:none; font-weight:700; }
-    footer { padding:24px clamp(24px,5vw,72px); color:white; background:var(--green); font-size:12px; letter-spacing:.08em; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif; line-height:1.9; letter-spacing:.02em; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible { outline:3px solid var(--lime); outline-offset:4px; }
+    img { max-width:100%; }
+    .wrap { width:min(calc(100% - 48px),var(--max)); margin-inline:auto; }
+    .topbar { position:absolute; z-index:3; inset:0 0 auto; padding:24px 0; color:white; border-bottom:1px solid rgba(255,255,255,.2); }
+    .topbar .wrap { display:flex; justify-content:space-between; gap:20px; font-weight:700; }
+    .hero { position:relative; min-height:680px; display:flex; align-items:flex-end; color:white; overflow:hidden; background:var(--deep); }
+    .hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(5,35,31,.94),rgba(5,35,31,.4)),linear-gradient(0deg,rgba(5,35,31,.68),transparent 65%); }
+    .hero-content { position:relative; z-index:1; padding:180px 0 86px; }
+    .eyebrow,.section-index { margin:0; color:var(--lime); font-size:12px; font-weight:700; letter-spacing:.17em; text-transform:uppercase; }
+    h1,h2,h3 { font-family:"Yu Mincho","Hiragino Mincho ProN",serif; font-weight:500; }
+    h1 { margin:18px 0 0; max-width:880px; font-size:clamp(46px,7vw,82px); line-height:1.22; }
+    .lead { max-width:760px; margin:28px 0 0; color:rgba(255,255,255,.8); font-size:clamp(16px,2vw,20px); }
+    section { padding:110px 0; }
+    .section-head { display:grid; grid-template-columns:.55fr 1.45fr; gap:60px; margin-bottom:58px; }
+    .section-index { color:var(--green); }
+    h2 { margin:0; font-size:clamp(34px,5vw,58px); line-height:1.4; }
+    .facts { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+    .fact { min-height:245px; padding:34px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .fact-label { margin:0; color:var(--green); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    .fact h3 { margin:48px 0 10px; font-size:30px; }
+    .fact p { margin:0; color:var(--muted); }
+    .cycle { color:white; background:var(--ink); }
+    .cycle .section-index { color:var(--lime); }
+    .cycle-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(255,255,255,.18); border-left:1px solid rgba(255,255,255,.18); }
+    .cycle-step { min-height:270px; padding:32px; border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); }
+    .cycle-no { color:var(--lime); font-family:Georgia,serif; }
+    .cycle-step h3 { margin:56px 0 12px; font-size:25px; }
+    .cycle-step p { margin:0; color:rgba(255,255,255,.68); font-size:14px; }
+    .aircraft-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+    .aircraft { position:relative; min-height:520px; display:flex; align-items:flex-end; overflow:hidden; color:white; background:var(--deep); }
+    .aircraft img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .aircraft::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(5,35,31,.94),rgba(5,35,31,.12)); }
+    .aircraft div { position:relative; z-index:1; padding:36px; }
+    .aircraft h3 { margin:0 0 10px; font-size:40px; }
+    .aircraft p { margin:0; color:rgba(255,255,255,.75); }
+    .back { display:inline-flex; min-height:44px; align-items:center; margin-top:24px; color:var(--lime); font-weight:700; border-bottom:1px solid rgba(199,223,154,.45); }
+    footer { padding:46px 0; color:rgba(255,255,255,.72); background:var(--deep); }
+    footer .wrap { display:flex; justify-content:space-between; gap:24px; }
+    @media(max-width:760px) {
+      .wrap { width:min(calc(100% - 32px),var(--max)); }
+      .topbar .wrap { font-size:12px; }
+      .hero { min-height:620px; }
+      .hero-content { padding-bottom:62px; }
+      section { padding:78px 0; }
+      .section-head,.facts,.cycle-grid,.aircraft-grid { grid-template-columns:1fr; }
+      .section-head { gap:30px; }
+      .fact,.cycle-step { min-height:220px; }
+      .aircraft { min-height:430px; }
+      footer .wrap { display:block; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   </style>
 </head>
 <body>
-  <header><a href="index.html">米山研究室 / AOYAMA GAKUIN UNIVERSITY</a></header>
+  <header class="topbar">
+    <div class="wrap"><a href="index.html">米山研究室 UAVグループ</a><a href="index.html">トップへ戻る</a></div>
+  </header>
   <main>
-    <article>
-      <div class="eyebrow">YONEYAMA LABORATORY</div>
-      <h1>米山研究室について</h1>
-      <p>研究室の理念・活動・設備などの詳細を掲載予定です。</p>
-      <p>現在、ページを準備しています。公開までしばらくお待ちください。</p>
-      <a class="back" href="index.html">トップページへ戻る →</a>
-    </article>
+    <section class="hero">
+      <img src="assets/images/research-scenes/runway-testing.webp" alt="滑走路でUAV飛行試験を行う研究メンバー" width="1800" height="1352">
+      <div class="wrap hero-content">
+        <p class="eyebrow">Yoneyama Laboratory UAV Group</p>
+        <h1>研究を、飛ぶ機体へ。</h1>
+        <p class="lead">モデル化、制御設計、機体への実装、飛行試験、データ解析。UAVグループでは、理論と実機の間を何度も往復しながら研究を進めます。</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="group-title">
+      <div class="wrap">
+        <div class="section-head"><p class="section-index">01 / Group</p><h2 id="group-title">米山研究室の<br>UAV研究チーム。</h2></div>
+        <div class="facts">
+          <article class="fact"><p class="fact-label">Supervisor</p><h3>米山 淳 教授</h3><p>UAV飛行制御、現代制御、システム制御を軸に研究を指導します。</p></article>
+          <article class="fact"><p class="fact-label">Students</p><h3>学生 7名</h3><p>M2が2名、M1が2名、B4が3名で研究と実験を進めています。</p></article>
+          <article class="fact"><p class="fact-label">Location</p><h3>L棟401</h3><p>青山学院大学 相模原キャンパスを拠点に活動しています。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cycle" aria-labelledby="cycle-title">
+      <div class="wrap">
+        <div class="section-head"><p class="section-index">02 / Research Cycle</p><h2 id="cycle-title">設計と実験を、<br>循環させる。</h2></div>
+        <div class="cycle-grid">
+          <article class="cycle-step"><span class="cycle-no">01</span><h3>モデル化</h3><p>機体運動と飛行環境を、制御設計に使えるモデルとして整理します。</p></article>
+          <article class="cycle-step"><span class="cycle-no">02</span><h3>制御設計</h3><p>経路追従と姿勢安定化を実現する制御器・推定器を検討します。</p></article>
+          <article class="cycle-step"><span class="cycle-no">03</span><h3>実装</h3><p>センサ、通信、計算機、アクチュエータを統合して機体へ実装します。</p></article>
+          <article class="cycle-step"><span class="cycle-no">04</span><h3>飛行試験</h3><p>実環境でデータを取得し、解析結果を次の設計へ戻します。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="aircraft-title">
+      <div class="wrap">
+        <div class="section-head"><p class="section-index">03 / Aircraft</p><h2 id="aircraft-title">二つの機体で<br>飛行制御を探る。</h2></div>
+        <div class="aircraft-grid">
+          <a class="aircraft" href="research/fixed-wing.html"><img src="assets/images/research-scenes/fixed-wing-flight-side.webp" alt="飛行する全翼型固定翼UAV" width="1800" height="1200"><div><h3>固定翼UAV</h3><p>経路追従・姿勢安定化・実機飛行試験</p></div></a>
+          <a class="aircraft" href="research/ppg.html"><img src="assets/images/research-scenes/ppg-flight-sky.webp" alt="飛行するPPG型UAV" width="1800" height="1200"><div><h3>PPG</h3><p>3次元経路生成・外乱推定・安定化制御</p></div></a>
+        </div>
+        <a class="back" href="index.html#scenes">研究の様子を見る →</a>
+      </div>
+    </section>
   </main>
-  <footer>© Yoneyama Laboratory, Aoyama Gakuin University.</footer>
+  <footer><div class="wrap"><span>青山学院大学 米山研究室 UAVグループ</span><span>相模原キャンパス L棟401</span></div></footer>
 </body>
 </html>
