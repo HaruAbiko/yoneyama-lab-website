@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="青山学院大学 米山研究室UAVグループの紹介。固定翼UAVとPPGの飛行制御・実機実験に取り組んでいます。">
+  <meta name="description" content="青山学院大学 米山研究室UAVグループの紹介。髙橋佑徳助教をリーダーに、固定翼班とPPG班がモデル構築・制御理論研究・実機実験検証に取り組んでいます。">
   <title>UAVグループ紹介 | 米山研究室</title>
   <style>
     :root {
@@ -39,7 +39,7 @@
     .fact p { margin:0; color:var(--muted); }
     .cycle { color:white; background:var(--ink); }
     .cycle .section-index { color:var(--lime); }
-    .cycle-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(255,255,255,.18); border-left:1px solid rgba(255,255,255,.18); }
+    .cycle-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid rgba(255,255,255,.18); border-left:1px solid rgba(255,255,255,.18); }
     .cycle-step { min-height:270px; padding:32px; border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); }
     .cycle-no { color:var(--lime); font-family:Georgia,serif; }
     .cycle-step h3 { margin:56px 0 12px; font-size:25px; }
@@ -79,39 +79,38 @@
       <div class="wrap hero-content">
         <p class="eyebrow">Yoneyama Laboratory UAV Group</p>
         <h1>研究を、飛ぶ機体へ。</h1>
-        <p class="lead">モデル化、制御設計、機体への実装、飛行試験、データ解析。UAVグループでは、理論と実機の間を何度も往復しながら研究を進めます。</p>
+        <p class="lead">米山研究室のUAVグループとして、髙橋佑徳助教をリーダーに、固定翼班とPPG班が共通の研究枠組みで活動しています。</p>
       </div>
     </section>
 
     <section aria-labelledby="group-title">
       <div class="wrap">
-        <div class="section-head"><p class="section-index">01 / Group</p><h2 id="group-title">米山研究室の<br>UAV研究チーム。</h2></div>
+        <div class="section-head"><p class="section-index">01 / Organization</p><h2 id="group-title">米山研究室の中の<br>UAVグループ。</h2></div>
         <div class="facts">
-          <article class="fact"><p class="fact-label">Supervisor</p><h3>米山 淳 教授</h3><p>UAV飛行制御、現代制御、システム制御を軸に研究を指導します。</p></article>
+          <article class="fact"><p class="fact-label">Yoneyama Laboratory</p><h3>米山 淳 教授</h3><p>青山学院大学理工学部電気電子工学科・米山研究室の教授です。</p></article>
+          <article class="fact"><p class="fact-label">UAV Group Leader</p><h3>髙橋 佑徳 助教</h3><p>UAVグループのリーダーとして、固定翼班とPPG班の研究を指導します。</p></article>
           <article class="fact"><p class="fact-label">Students</p><h3>学生 7名</h3><p>M2が2名、M1が2名、B4が3名で研究と実験を進めています。</p></article>
-          <article class="fact"><p class="fact-label">Location</p><h3>L棟401</h3><p>青山学院大学 相模原キャンパスを拠点に活動しています。</p></article>
         </div>
       </div>
     </section>
 
     <section class="cycle" aria-labelledby="cycle-title">
       <div class="wrap">
-        <div class="section-head"><p class="section-index">02 / Research Cycle</p><h2 id="cycle-title">設計と実験を、<br>循環させる。</h2></div>
+        <div class="section-head"><p class="section-index">02 / Research Framework</p><h2 id="cycle-title">共通する三つの<br>研究枠組み。</h2></div>
         <div class="cycle-grid">
-          <article class="cycle-step"><span class="cycle-no">01</span><h3>モデル化</h3><p>機体運動と飛行環境を、制御設計に使えるモデルとして整理します。</p></article>
-          <article class="cycle-step"><span class="cycle-no">02</span><h3>制御設計</h3><p>経路追従と姿勢安定化を実現する制御器・推定器を検討します。</p></article>
-          <article class="cycle-step"><span class="cycle-no">03</span><h3>実装</h3><p>センサ、通信、計算機、アクチュエータを統合して機体へ実装します。</p></article>
-          <article class="cycle-step"><span class="cycle-no">04</span><h3>飛行試験</h3><p>実環境でデータを取得し、解析結果を次の設計へ戻します。</p></article>
+          <article class="cycle-step"><span class="cycle-no">01</span><h3>モデル構築</h3><p>機体運動、空力特性、飛行環境を、解析と制御設計に使えるモデルとして整理します。</p></article>
+          <article class="cycle-step"><span class="cycle-no">02</span><h3>制御理論研究</h3><p>モデルを基に、経路追従、姿勢安定化、外乱対応のための制御手法を研究します。</p></article>
+          <article class="cycle-step"><span class="cycle-no">03</span><h3>実機実験検証</h3><p>制御系を実装して屋外実験を行い、取得したデータから有効性と課題を確かめます。</p></article>
         </div>
       </div>
     </section>
 
     <section aria-labelledby="aircraft-title">
       <div class="wrap">
-        <div class="section-head"><p class="section-index">03 / Aircraft</p><h2 id="aircraft-title">二つの機体で<br>飛行制御を探る。</h2></div>
+        <div class="section-head"><p class="section-index">03 / Two Teams</p><h2 id="aircraft-title">固定翼班と<br>PPG班。</h2></div>
         <div class="aircraft-grid">
-          <a class="aircraft" href="research/fixed-wing.html"><img src="assets/images/research-scenes/fixed-wing-flight-side.webp" alt="飛行する全翼型固定翼UAV" width="1800" height="1200"><div><h3>固定翼UAV</h3><p>経路追従・姿勢安定化・実機飛行試験</p></div></a>
-          <a class="aircraft" href="research/ppg.html"><img src="assets/images/research-scenes/ppg-flight-sky.webp" alt="飛行するPPG型UAV" width="1800" height="1200"><div><h3>PPG</h3><p>3次元経路生成・外乱推定・安定化制御</p></div></a>
+          <a class="aircraft" href="research/fixed-wing.html"><img src="assets/images/research-scenes/fixed-wing-flight-side.webp" alt="飛行する全翼型固定翼UAV" width="1800" height="1200"><div><h3>固定翼班</h3><p>モデル構築・制御理論研究・実機飛行試験</p></div></a>
+          <a class="aircraft" href="research/ppg.html"><img src="assets/images/research-scenes/ppg-flight-sky.webp" alt="飛行するPPG型UAV" width="1800" height="1200"><div><h3>PPG班</h3><p>モデル構築・制御理論研究・実飛行検証</p></div></a>
         </div>
         <a class="back" href="index.html#scenes">研究の様子を見る →</a>
       </div>
