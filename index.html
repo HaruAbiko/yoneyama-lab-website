@@ -215,6 +215,56 @@
     }
     .research-card p { margin: 0; max-width: 460px; color: var(--muted); transition: color 200ms ease; }
 
+    .aerial-focus { padding: 0 0 130px; }
+    .aerial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .aerial-card {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      min-height: 540px;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--ink);
+    }
+    .aerial-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms ease; }
+    .aerial-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(6,27,25,.94) 0%, rgba(6,27,25,.22) 70%); }
+    .aerial-card:hover img { transform: scale(1.035); }
+    .aerial-copy { position: relative; z-index: 1; padding: 42px; }
+    .aerial-copy .card-no { color: var(--lime); }
+    .aerial-copy h3 { margin: 18px 0 14px; font-family: Georgia, "Yu Mincho", serif; font-size: clamp(34px, 4vw, 52px); font-weight: 500; }
+    .aerial-copy p { margin: 0; max-width: 500px; color: rgba(255,255,255,.76); }
+    .aerial-link { display: inline-flex; margin-top: 24px; color: var(--lime); font-weight: 700; border-bottom: 1px solid rgba(199,223,154,.45); }
+
+    .scenes { padding: 120px 0 130px; color: var(--white); background: var(--ink); }
+    .scenes .section-index { color: var(--lime); }
+    .slideshow { position: relative; }
+    .slide { display: none; grid-template-columns: minmax(0,1.45fr) minmax(280px,.55fr); min-height: 620px; background: var(--green-deep); }
+    .slide.is-active { display: grid; }
+    .slide-media { min-width: 0; overflow: hidden; background: #0a2724; }
+    .slide-media img { display: block; width: 100%; height: 620px; object-fit: cover; }
+    .slide-copy { display: flex; flex-direction: column; justify-content: flex-end; padding: 48px; }
+    .slide-count { margin: 0 0 auto; color: rgba(255,255,255,.45); font-family: Georgia, serif; letter-spacing: .12em; }
+    .slide-kicker { margin: 0 0 14px; color: var(--lime); font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .slide-copy h3 { margin: 0; font-family: "Yu Mincho", serif; font-size: clamp(30px,4vw,46px); font-weight: 500; line-height: 1.4; }
+    .slide-copy p:last-child { margin: 18px 0 0; color: rgba(255,255,255,.7); }
+    .slideshow-controls { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 24px; }
+    .slide-buttons { display: flex; gap: 10px; }
+    .slide-button { width: 50px; height: 50px; color: var(--white); background: transparent; border: 1px solid rgba(255,255,255,.28); cursor: pointer; font-size: 20px; }
+    .slide-button:hover { color: var(--ink); background: var(--lime); }
+    .slide-dots { display: flex; flex-wrap: wrap; gap: 8px; }
+    .slide-dot { width: 28px; height: 4px; padding: 0; border: 0; background: rgba(255,255,255,.25); cursor: pointer; }
+    .slide-dot[aria-current="true"] { background: var(--lime); }
+    .slide-status { min-width: 95px; color: rgba(255,255,255,.58); font-size: 12px; text-align: right; }
+
+    .presentations { padding: 120px 0; }
+    .presentation-list { border-top: 1px solid var(--line); }
+    .presentation-item { display: grid; grid-template-columns: 130px 1fr auto; gap: 28px; align-items: start; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .presentation-date { color: var(--green); font-family: Georgia, serif; font-size: 15px; }
+    .presentation-title { margin: 0; font-size: 16px; line-height: 1.8; }
+    .presentation-venue { color: var(--muted); font-size: 12px; letter-spacing: .06em; text-align: right; }
+    .source-note { margin: 28px 0 0; color: var(--muted); font-size: 13px; }
+    .source-note a { color: var(--green); border-bottom: 1px solid rgba(23,79,69,.35); }
+
     .field-work { padding: 0 0 130px; }
     .field-hero {
       position: relative;
@@ -308,6 +358,24 @@
       font-weight: 500;
       letter-spacing: 0.08em;
     }
+    .faculty-meta { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
+    .faculty-profile {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 70px;
+      margin: 0 0 72px;
+      padding: 54px;
+      color: var(--white);
+      background: var(--green-deep);
+    }
+    .faculty-profile h3 { margin: 10px 0 12px; font-family: "Yu Mincho", serif; font-size: clamp(30px,4vw,44px); font-weight: 500; }
+    .faculty-profile .profile-specialty { margin: 0; color: var(--lime); font-size: 14px; line-height: 1.8; }
+    .profile-details { margin: 0; }
+    .profile-details div { display: grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.16); }
+    .profile-details div:last-child { border-bottom: 1px solid rgba(255,255,255,.16); }
+    .profile-details dt { color: rgba(255,255,255,.48); font-size: 12px; font-weight: 700; letter-spacing: .1em; }
+    .profile-details dd { margin: 0; color: rgba(255,255,255,.78); font-size: 14px; }
+    .profile-source { display: inline-flex; margin-top: 24px; color: var(--lime); font-size: 13px; border-bottom: 1px solid rgba(199,223,154,.45); }
     .student-summary {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -405,16 +473,27 @@
         background:
           linear-gradient(0deg, rgba(5, 35, 31, 0.94) 0%, rgba(5, 35, 31, 0.7) 70%, rgba(5, 35, 31, 0.54) 100%);
       }
-      .hero-grid, .section-head, .intro-text, .about-grid, .student-summary { grid-template-columns: 1fr; gap: 38px; }
+      .hero-grid, .section-head, .intro-text, .about-grid, .student-summary, .faculty-profile { grid-template-columns: 1fr; gap: 38px; }
       .hero-side { border-left: 0; border-top: 1px solid rgba(255,255,255,0.22); padding: 28px 0 0; }
       .intro { padding: 86px 0 70px; }
       .section-head { margin-bottom: 32px; }
       .intro-text p { grid-column: 1; }
       .research { padding-bottom: 88px; }
-      .research-grid { grid-template-columns: 1fr; }
+      .research-grid, .aerial-grid { grid-template-columns: 1fr; }
       .research-card { min-height: 290px; padding: 30px; }
       .research-card::after { right: 30px; top: 26px; }
       .research-card h3 { margin-top: 58px; }
+      .aerial-focus { padding-bottom: 88px; }
+      .aerial-card { min-height: 470px; }
+      .aerial-copy { padding: 30px; }
+      .scenes, .presentations { padding: 82px 0; }
+      .slide, .slide.is-active { grid-template-columns: 1fr; }
+      .slide-media img { height: 390px; }
+      .slide-copy { min-height: 340px; padding: 30px; }
+      .slideshow-controls { align-items: flex-start; flex-wrap: wrap; }
+      .slide-dots { order: 3; width: 100%; }
+      .presentation-item { grid-template-columns: 90px 1fr; gap: 14px; }
+      .presentation-venue { grid-column: 2; text-align: left; }
       .field-work { padding-bottom: 88px; }
       .field-hero, .field-overlay { min-height: 560px; }
       .field-hero img { object-position: 47% center; }
@@ -426,6 +505,8 @@
       .faculty-grid { grid-template-columns: 1fr; margin-bottom: 48px; }
       .faculty-card { min-height: 190px; padding: 30px; }
       .faculty-role { margin-bottom: 30px; }
+      .faculty-profile { padding: 32px 28px; }
+      .profile-details div { grid-template-columns: 1fr; gap: 6px; }
       .student-counts { grid-template-columns: 1fr; }
       .student-count { display: flex; justify-content: space-between; align-items: center; border-left: 1px solid var(--line); }
       .student-number { margin-top: 0; }
@@ -453,11 +534,11 @@
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">メニュー</button>
       <nav class="nav" id="global-nav" aria-label="メインナビゲーション">
         <a href="#research">研究分野</a>
-        <a href="#about">研究室について</a>
+        <a href="#aerial">固定翼・PPG</a>
+        <a href="#scenes">研究の様子</a>
+        <a href="#presentations">研究発表</a>
         <a href="#members">メンバー</a>
-        <a href="#news">ニュース</a>
         <a href="#access">アクセス</a>
-        <a href="#contact">お問い合わせ</a>
       </nav>
     </div>
   </header>
@@ -525,24 +606,109 @@
       </div>
     </section>
 
-    <section class="field-work" aria-labelledby="field-title">
-      <div class="field-hero">
-        <img src="assets/images/flight-test-team-runway.webp" alt="飛行試験のため機材を運びながら滑走路を進む研究チーム" width="2000" height="1500">
-        <div class="wrap field-overlay">
-          <p class="eyebrow">Field Work</p>
-          <h2 id="field-title">理論だけで終わらせない。<br>現場で確かめる。</h2>
-          <p>解析・設計・実装を実機での試験へつなげ、得られた結果を次の研究へ還元します。</p>
+    <section class="aerial-focus" id="aerial" aria-labelledby="aerial-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-index">03 / Aerial Robotics</p>
+          <h2 id="aerial-title">二つの機体で、<br>飛行制御を探究する。</h2>
+        </div>
+        <div class="aerial-grid">
+          <a class="aerial-card" href="research/fixed-wing.html">
+            <img src="assets/images/research-scenes/fixed-wing-flight-side.webp" alt="屋外を飛行する全翼型固定翼UAV" width="1800" height="1200">
+            <div class="aerial-copy">
+              <span class="card-no">FIXED-WING UAV</span>
+              <h3>固定翼</h3>
+              <p>全翼型UAVを対象に、経路追従、姿勢安定化、飛行実験までをつなぐ制御システムを研究します。</p>
+              <span class="aerial-link">研究を見る →</span>
+            </div>
+          </a>
+          <a class="aerial-card" href="research/ppg.html">
+            <img src="assets/images/research-scenes/ppg-flight-sky.webp" alt="青空を飛行するパワードパラグライダー型飛行ロボット" width="1800" height="1200">
+            <div class="aerial-copy">
+              <span class="card-no">POWERED PARAGLIDER</span>
+              <h3>PPG</h3>
+              <p>パワードパラグライダー型飛行ロボットを対象に、風外乱や機体特性の変化に対応する経路生成・安定化制御を研究します。</p>
+              <span class="aerial-link">研究を見る →</span>
+            </div>
+          </a>
         </div>
       </div>
-      <div class="wrap field-gallery">
-        <figure class="field-photo">
-          <img src="assets/images/flight-test-aircraft-cart.webp" alt="試験場所へ搬送される全翼型UAV" width="2000" height="2667">
-          <figcaption>UAV FLIGHT TEST — AIRCRAFT TRANSPORT</figcaption>
-        </figure>
-        <figure class="field-photo">
-          <img src="assets/images/flight-test-preparation.webp" alt="屋外で飛行試験用の機材を準備する様子" width="2000" height="1502">
-          <figcaption>UAV FLIGHT TEST — PREPARATION</figcaption>
-        </figure>
+    </section>
+
+    <section class="scenes" id="scenes" aria-labelledby="scenes-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-index">04 / Research Scenes</p>
+          <h2 id="scenes-title">研究の様子</h2>
+        </div>
+        <div class="slideshow" data-slideshow aria-roledescription="カルーセル" aria-label="研究活動の写真">
+          <article class="slide is-active" data-slide aria-hidden="false">
+            <div class="slide-media"><img src="assets/images/research-scenes/fixed-wing-flight-side.webp" alt="樹木を背景に飛行する全翼型固定翼UAV" width="1800" height="1200"></div>
+            <div class="slide-copy"><p class="slide-count">01 / 10</p><p class="slide-kicker">Fixed-wing flight</p><h3>固定翼UAVの飛行試験</h3><p>設計した制御系を実機へ実装し、屋外環境で飛行特性と制御性能を確認します。</p></div>
+          </article>
+          <article class="slide" data-slide aria-hidden="true">
+            <div class="slide-media"><img src="assets/images/research-scenes/ppg-flight-sky.webp" alt="青空を飛行するPPG型飛行ロボット" width="1800" height="1200"></div>
+            <div class="slide-copy"><p class="slide-count">02 / 10</p><p class="slide-kicker">PPG flight</p><h3>PPGの飛行</h3><p>柔軟な翼を持つ機体を対象に、風のある実環境で安定した飛行を目指します。</p></div>
+          </article>
+          <article class="slide" data-slide aria-hidden="true">
+            <div class="slide-media"><img src="assets/images/research-scenes/fixed-wing-field-setup.webp" alt="屋外で固定翼UAVと計測機器を準備する学生" width="1800" height="1352"></div>
+            <div class="slide-copy"><p class="slide-count">03 / 10</p><p class="slide-kicker">Field setup</p><h3>飛行前の機体調整</h3><p>機体、センサ、通信・計測装置を現地で確認し、安全に飛行試験を開始できる状態へ整えます。</p></div>
+          </article>
+          <article class="slide" data-slide aria-hidden="true">
+            <div class="slide-media"><img src="assets/images/research-scenes/laboratory-electronics-work.webp" alt="研究室で電子機器の製作と調整を行う学生" width="1800" height="1350"></div>
+            <div class="slide-copy"><p class="slide-count">04 / 10</p><p class="slide-kicker">Laboratory work</p><h3>製作・実装</h3><p>制御理論を実機へつなぐため、電子回路、配線、ソフトウェアを研究室で製作・調整します。</p></div>
+          </article>
+          <article class="slide" data-slide aria-hidden="true">
+            <div class="slide-media"><img src="assets/images/research-scenes/ppg-canopy-preparation.webp" alt="滑走路でPPGの翼と機体を準備する研究メンバー" width="1800" height="1200"></div>
+            <div class="slide-copy"><p class="slide-count">05 / 10</p><p class="slide-kicker">PPG preparation</p><h3>PPGの展開と点検</h3><p>キャノピー、ライン、推進部を確認し、離陸前の準備をチームで進めます。</p></div>
+          </article>
+          <article class="slide" data-slide aria-hidden="true">
+            <div class="slide-media"><img src="assets/images/research-scenes/fixed-wing-telemetry.webp" alt="固定翼UAVの横で計測用PCを確認する研究メンバー" width="1800" height="1352"></div>
+            <div class="slide-copy"><p class="slide-count">06 / 10</p><p class="slide-kicker">Telemetry</p><h3>計測・テレメトリ</h3><p>飛行前後のデータを確認し、機体状態と制御系の応答を次の改善へつなげます。</p></div>
+          </article>
+          <article class="slide" data-slide aria-hidden="true">
+            <div class="slide-media"><img src="assets/images/research-scenes/taiki-aerospace-town.webp" alt="北海道大樹町の宇宙を題材にした壁画" width="1800" height="1352"></div>
+            <div class="slide-copy"><p class="slide-count">07 / 10</p><p class="slide-kicker">Taiki, Hokkaido</p><h3>北海道での実験活動</h3><p>広い実験環境での飛行試験に向け、機体と計測系を持ち込み検証を行います。</p></div>
+          </article>
+          <article class="slide" data-slide aria-hidden="true">
+            <div class="slide-media"><img src="assets/images/research-scenes/runway-flight-preparation.webp" alt="滑走路上で飛行試験機器を準備する研究メンバー" width="1800" height="1350"></div>
+            <div class="slide-copy"><p class="slide-count">08 / 10</p><p class="slide-kicker">Runway test</p><h3>滑走路での最終確認</h3><p>試験条件、通信、記録装置、安全手順を確認してから飛行へ移ります。</p></div>
+          </article>
+          <article class="slide" data-slide aria-hidden="true">
+            <div class="slide-media"><img src="assets/images/research-scenes/fixed-wing-hand-launch.webp" alt="固定翼UAVの発進準備を行う研究メンバー" width="1800" height="1352"></div>
+            <div class="slide-copy"><p class="slide-count">09 / 10</p><p class="slide-kicker">Launch preparation</p><h3>固定翼機の発進準備</h3><p>機体の姿勢や発進方向を確認し、チーム内でタイミングを合わせます。</p></div>
+          </article>
+          <article class="slide" data-slide aria-hidden="true">
+            <div class="slide-media"><img src="assets/images/research-scenes/runway-testing.webp" alt="滑走路脇で機材を展開して飛行試験を行う研究メンバー" width="1800" height="1352"></div>
+            <div class="slide-copy"><p class="slide-count">10 / 10</p><p class="slide-kicker">Team operation</p><h3>チームで進める実機検証</h3><p>操縦、計測、安全確認を分担し、得られたデータを解析と次の設計へ還元します。</p></div>
+          </article>
+          <div class="slideshow-controls">
+            <div class="slide-buttons">
+              <button class="slide-button" type="button" data-prev aria-label="前の写真">←</button>
+              <button class="slide-button" type="button" data-next aria-label="次の写真">→</button>
+              <button class="slide-button" type="button" data-toggle aria-label="自動再生を停止">Ⅱ</button>
+            </div>
+            <div class="slide-dots" data-dots aria-label="写真を選択"></div>
+            <div class="slide-status" aria-live="polite" data-status>1 / 10</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="presentations" id="presentations" aria-labelledby="presentations-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-index">05 / Presentations</p>
+          <h2 id="presentations-title">研究発表</h2>
+        </div>
+        <div class="presentation-list">
+          <article class="presentation-item"><time class="presentation-date" datetime="2026-07-01">2026.07.01</time><p class="presentation-title">パラフォイール型飛行ロボットのための3次元経路生成および実飛行環境を想定した安定化手法の提案</p><span class="presentation-venue">ROBOMECH 2026</span></article>
+          <article class="presentation-item"><time class="presentation-date" datetime="2026-07-01">2026.07.01</time><p class="presentation-title">無人航空機の懸垂式重心調整とトリム推定外乱オブザーバの統合的検討による性能改善</p><span class="presentation-venue">ROBOMECH 2026</span></article>
+          <article class="presentation-item"><time class="presentation-date" datetime="2026-06-20">2026.06.20</time><p class="presentation-title">T-S Fuzzy Model-Based Control with Application to Autonomous Bicycle</p><span class="presentation-venue">15th Asian Control Conference</span></article>
+          <article class="presentation-item"><time class="presentation-date" datetime="2026-05-25">2026.05.25</time><p class="presentation-title">H∞状態フィードバック制御理論を用いた四輪車両の外乱抑制制御</p><span class="presentation-venue">第70回システム制御情報学会研究発表講演会</span></article>
+          <article class="presentation-item"><time class="presentation-date" datetime="2026-03-19">2026.03.19</time><p class="presentation-title">非線形制御理論を用いた自律走行自転車の制御</p><span class="presentation-venue">第53回知能システムシンポジウム</span></article>
+        </div>
+        <p class="source-note">掲載内容は<a href="https://raweb.jm.aoyama.ac.jp/aguhp/KgApp/k03/resid/S001800" target="_blank" rel="noopener">青山学院大学 公式研究者情報（髙橋佑徳助教）</a>を2026年10月2日に確認したものです。</p>
       </div>
     </section>
 
@@ -562,7 +728,7 @@
     <section class="members" id="members" aria-labelledby="members-title">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-index">03 / Members</p>
+          <p class="section-index">06 / Members</p>
           <h2 id="members-title">研究室の構成</h2>
         </div>
 
@@ -570,12 +736,30 @@
           <article class="faculty-card">
             <p class="faculty-role">Professor</p>
             <h3 class="faculty-name">米山 淳</h3>
+            <p class="faculty-meta">現代制御・システム制御</p>
           </article>
           <article class="faculty-card">
             <p class="faculty-role">Assistant Professor</p>
             <h3 class="faculty-name">髙橋 佑徳</h3>
+            <p class="faculty-meta">制御・システム工学／知能機械システム／ソフトコンピューティング</p>
           </article>
         </div>
+
+        <article class="faculty-profile" aria-labelledby="takahashi-profile-title">
+          <div>
+            <p class="eyebrow">Faculty Profile</p>
+            <h3 id="takahashi-profile-title">髙橋 佑徳 助教</h3>
+            <p class="profile-specialty">制御・システム工学<br>知能機械システム<br>ソフトコンピューティング</p>
+            <a class="profile-source" href="https://raweb.jm.aoyama.ac.jp/aguhp/KgApp/k03/resid/S001800" target="_blank" rel="noopener">青山学院大学 公式研究者情報 ↗</a>
+          </div>
+          <dl class="profile-details">
+            <div><dt>学歴</dt><dd>電気通信大学 情報理工学部を卒業後、同大学大学院の博士前期課程・博士後期課程を修了。</dd></div>
+            <div><dt>学位</dt><dd>博士（工学）（電気通信大学）</dd></div>
+            <div><dt>企業勤務</dt><dd>2017年4月～2021年2月　株式会社日立国際電気 機構設計部</dd></div>
+            <div><dt>現職</dt><dd>2024年4月～　青山学院大学 理工学部 電気電子工学科 助教<br>2025年2月～　電気通信大学 大学院情報理工学研究科 客員研究員</dd></div>
+            <div><dt>受賞</dt><dd>2025年9月　第33回インテリジェント・システム・シンポジウム 優秀論文賞（3次元全翼機モデルの高木・菅野ファジィシステム表現と姿勢安定化制御）</dd></div>
+          </dl>
+        </article>
 
         <div class="student-summary">
           <h3>学生構成</h3>
@@ -600,7 +784,7 @@
     <section class="news" id="news" aria-labelledby="news-title">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-index">04 / News</p>
+          <p class="section-index">07 / News</p>
           <h2 id="news-title">最新情報</h2>
         </div>
         <div aria-label="ニュース一覧">
@@ -616,7 +800,7 @@
     <section class="access" id="access" aria-labelledby="access-title">
       <div class="wrap access-grid">
         <div>
-          <p class="section-index">05 / Access</p>
+          <p class="section-index">08 / Access</p>
           <h2 id="access-title">アクセス</h2>
         </div>
         <div class="access-details">
@@ -665,6 +849,74 @@
         menuButton.setAttribute('aria-expanded', 'false');
       }
     });
+
+    const slideshow = document.querySelector('[data-slideshow]');
+    if (slideshow) {
+      const slides = [...slideshow.querySelectorAll('[data-slide]')];
+      const dotsContainer = slideshow.querySelector('[data-dots]');
+      const status = slideshow.querySelector('[data-status]');
+      const toggleButton = slideshow.querySelector('[data-toggle]');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let current = 0;
+      let autoplay = !reduceMotion;
+      let timer;
+
+      slides.forEach((slide, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'slide-dot';
+        dot.setAttribute('aria-label', `${index + 1}枚目の写真を表示`);
+        dot.addEventListener('click', () => showSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+      const dots = [...dotsContainer.children];
+
+      function updateToggle() {
+        toggleButton.textContent = autoplay ? 'Ⅱ' : '▶';
+        toggleButton.setAttribute('aria-label', autoplay ? '自動再生を停止' : '自動再生を開始');
+      }
+
+      function stopTimer() {
+        window.clearInterval(timer);
+      }
+
+      function startTimer() {
+        stopTimer();
+        if (autoplay) timer = window.setInterval(() => showSlide(current + 1), 6000);
+      }
+
+      function showSlide(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          const active = slideIndex === current;
+          slide.classList.toggle('is-active', active);
+          slide.setAttribute('aria-hidden', String(!active));
+        });
+        dots.forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === current)));
+        status.textContent = `${current + 1} / ${slides.length}`;
+        startTimer();
+      }
+
+      slideshow.querySelector('[data-prev]').addEventListener('click', () => showSlide(current - 1));
+      slideshow.querySelector('[data-next]').addEventListener('click', () => showSlide(current + 1));
+      toggleButton.addEventListener('click', () => {
+        autoplay = !autoplay;
+        updateToggle();
+        startTimer();
+      });
+      slideshow.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') showSlide(current - 1);
+        if (event.key === 'ArrowRight') showSlide(current + 1);
+      });
+      slideshow.addEventListener('mouseenter', stopTimer);
+      slideshow.addEventListener('mouseleave', startTimer);
+      slideshow.addEventListener('focusin', stopTimer);
+      slideshow.addEventListener('focusout', startTimer);
+      document.addEventListener('visibilitychange', () => document.hidden ? stopTimer() : startTimer());
+
+      updateToggle();
+      showSlide(0);
+    }
   </script>
 </body>
 </html>

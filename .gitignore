@@ -3,5 +3,6 @@ assets/originals/
 
 # Local/editor files
 .vscode/
+.hermes/
 .DS_Store
 Thumbs.db
