@@ -1,7 +1,7 @@
 # 米山研究室 UAVグループ ウェブサイト編集手順
 
 この文書は，米山研究室UAVグループのウェブサイトを共同編集するための手順書です.
-GitHub DesktopとVisual Studio Code（VS Code）を使う方法を中心に説明します.
+Visual Studio Code（VS Code）を中心に，GitHub DesktopまたはVS Code内蔵のGit機能を使う方法を説明します.
 
 ## 1. 公開先とリポジトリ
 
@@ -41,15 +41,33 @@ GitHub DesktopとVisual Studio Code（VS Code）を使う方法を中心に説�
 
 次のアプリを使用します.
 
-- [GitHub Desktop](https://desktop.github.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - VS Code拡張機能：Live Server
+- VS Code拡張機能：GitHub Pull Requests（発行元：GitHub）
+- [GitHub Desktop](https://desktop.github.com/)（画面操作でGitを扱いたい場合）
 
 Live Serverは，VS Code左側のExtensionsから`Live Server`を検索し，発行元がRitwick Deyのものをインストールします.
+Pull RequestもVS Code内で作成する場合は，`GitHub Pull Requests`を検索し，発行元がGitHubのものをインストールします.
 
 ### 3.3 リポジトリをcloneする
 
 cloneは最初の1回だけ行います.
+
+#### VS Codeからcloneする場合
+
+1. VS Codeを開く.
+2. スタート画面の**Clone Git Repository**を選択する.
+3. 次のURLを貼り付ける.
+
+   ```text
+   https://github.com/HaruAbiko/yoneyama-lab-website.git
+   ```
+
+4. PC内の保存先フォルダーを選択する.
+5. clone完了後に**Open**を選択する.
+6. GitHubへのサインインを求められた場合は，自分のGitHubアカウントで認証する.
+
+#### GitHub Desktopからcloneする場合
 
 1. GitHub Desktopを開く.
 2. **File → Clone repository...**を選択する.
@@ -68,6 +86,20 @@ cloneは最初の1回だけ行います.
 
 ### 4.1 mainを最新状態にする
 
+#### VS Codeで行う場合
+
+VS Codeで**Terminal → New Terminal**を選択し，次を実行します.
+
+```bash
+git switch main
+git pull --ff-only origin main
+```
+
+`Already up to date.`と表示された場合は，すでに最新です.
+未commitの変更がある場合は，そのままPullせず管理者へ確認してください.
+
+#### GitHub Desktopで行う場合
+
 1. GitHub Desktopを開く.
 2. 上部の**Current branch**が`main`であることを確認する.
 3. `main`でない場合は，**Current branch → main**を選択する.
@@ -75,6 +107,18 @@ cloneは最初の1回だけ行います.
 5. **Pull origin**が表示された場合は選択する.
 
 ### 4.2 作業用ブランチを作る
+
+#### VS Codeで行う場合
+
+最新の`main`から，次を実行します.
+
+```bash
+git switch -c docs/update-description
+```
+
+ブランチ名は変更内容に合わせて付けます. VS Code左下のブランチ表示が，作成した名前へ変わったことを確認してください.
+
+#### GitHub Desktopで行う場合
 
 1. **Current branch**を選択する.
 2. **New branch**を選択する.
@@ -134,43 +178,119 @@ GitHub Desktopの**Open in Visual Studio Code**を選択して，サイトを開
 
 `127.0.0.1`または`localhost`で始まるURLは，編集しているPCだけで表示できる確認用URLです. 一般公開URLではありません.
 
-## 7. commitとpush
+## 7. VS Codeでgit add・commit・pushする
 
-### 7.1 変更をcommitする
+### 7.1 変更内容を確認する
 
-1. ファイルを保存する（`Ctrl + S`）.
-2. GitHub Desktopへ戻る.
-3. 左側のChangesで変更ファイルと差分を確認する.
-4. Summaryへ変更内容を入力する.
+1. VS Codeでファイルを保存する（`Ctrl + S`）.
+2. 左側の**ソース管理**アイコンを選択する（`Ctrl + Shift + G`）.
+3. Changesに表示されたファイルを選択し，変更前後の差分を確認する.
 
-例：
+ターミナルで確認する場合：
 
-```text
-Update professor profile
-Correct UAV research description
-Fix typo on top page
+```bash
+git status
+git diff
 ```
 
-5. **Commit to 作業ブランチ名**を選択する.
+### 7.2 git addで変更をステージする
 
-### 7.2 ブランチをpushする
+commitへ含める変更を選ぶ操作が`git add`です.
 
-初回は**Publish branch**，2回目以降は**Push origin**を選択します.
+VS Codeのソース管理画面では，Changesにあるファイルの右側へマウスを置き，**`+`（Stage Changes）**を選択します.
+ファイルが**Staged Changes**へ移動すれば，`git add`が完了しています.
+
+ターミナルから特定のファイルを追加する場合：
+
+```bash
+git add index.html
+```
+
+複数のファイルを指定する場合：
+
+```bash
+git add index.html README.md
+```
+
+すべての変更を追加する場合：
+
+```bash
+git add .
+```
+
+> `git add .`はすべての変更を含めます. 不要な画像，個人情報，未公開資料が入っていないことを先に確認してください.
+
+ステージした内容は次で確認できます.
+
+```bash
+git diff --cached
+```
+
+間違えてステージした場合は，Staged Changesにあるファイル右側の**`-`（Unstage Changes）**を選択します. ファイル自体の編集内容は消えません.
+
+### 7.3 commitする
+
+1. Staged Changesに必要なファイルだけがあることを確認する.
+2. ソース管理画面上部のMessage欄へ変更内容を入力する.
+3. **Commit**を選択する.
+
+メッセージ例：
+
+```text
+docs: update professor profile
+fix: correct typo on top page
+```
+
+ターミナルからcommitする場合：
+
+```bash
+git commit -m "docs: update website description"
+```
+
+### 7.4 ブランチをpushする
+
+VS Code左下のブランチ名が作業ブランチであることを確認します.
+初回は**Publish Branch**，2回目以降は**Sync Changes**またはソース管理画面の**Push**を選択します.
+
+ターミナルから初回pushを行う場合：
+
+```bash
+git push -u origin 作業ブランチ名
+```
+
+2回目以降：
+
+```bash
+git push
+```
 
 pushしても，この時点では公開サイトへ反映されません.
 
 ## 8. Pull Requestを作る
 
-1. GitHub Desktopの**Create Pull Request**を選択する.
-2. GitHubの画面で次の組み合わせを確認する.
+### VS Codeから作成する場合
+
+1. VS Codeで`Ctrl + Shift + P`を押す.
+2. `GitHub Pull Requests: Create Pull Request`を検索して選択する.
+3. baseが`main`，compareが作業ブランチになっていることを確認する.
+4. タイトルと変更内容を入力する.
+5. **Create**を選択する.
+
+このコマンドが表示されない場合は，GitHub Pull Requests拡張機能をインストールし，自分のGitHubアカウントでサインインします.
+
+### GitHubのブラウザー画面から作成する場合
+
+1. ブラウザーで<https://github.com/HaruAbiko/yoneyama-lab-website>を開く.
+2. **Compare & pull request**を選択する. 表示されない場合は**Pull requests → New pull request**を選択する.
+3. 次の組み合わせを確認する.
 
    ```text
    base: main
    compare: 作業ブランチ名
    ```
 
-3. タイトルと変更内容を入力する.
-4. **Create pull request**を選択する.
+4. タイトルと変更内容を入力する.
+5. **Create pull request**を選択する.
 
 Pull Request本文の例：
 
