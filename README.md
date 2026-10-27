@@ -12,6 +12,10 @@
 - `research/fixed-wing.html`：固定翼UAV研究
 - `research/ppg.html`：PPG研究
 
+## 編集・共同作業
+
+初回のclone、ブランチ作成、ローカル確認、commit、push、Pull Requestの手順は、[ウェブサイト編集手順](EDITING_GUIDE.md)を参照してください。
+
 ## ローカルプレビュー
 
 VS Codeでこのフォルダーを開き、`index.html`を選択して右下の **Go Live** をクリックします。
