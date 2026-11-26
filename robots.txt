@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agu-yoneyama-lab.github.io/sitemap.xml

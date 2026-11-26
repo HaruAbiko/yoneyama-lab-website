@@ -5,8 +5,8 @@ Visual Studio Code（VS Code）を中心に，GitHub DesktopまたはVS Code内�
 
 ## 1. 公開先とリポジトリ
 
-- 公開サイト：<https://haruabiko.github.io/yoneyama-lab-website/>
-- GitHubリポジトリ：<https://github.com/HaruAbiko/yoneyama-lab-website>
+- 公開サイト：<https://agu-yoneyama-lab.github.io/>
+- GitHubリポジトリ：<https://github.com/agu-yoneyama-lab/agu-yoneyama-lab.github.io>
 - 公開元：`main`ブランチ
 
 `main`へマージされた内容は，GitHub Pagesによる処理後に一般公開されます.
@@ -60,7 +60,7 @@ cloneは最初の1回だけ行います.
 3. 次のURLを貼り付ける.
 
    ```text
-   https://github.com/HaruAbiko/yoneyama-lab-website.git
+   https://github.com/agu-yoneyama-lab/agu-yoneyama-lab.github.io.git
    ```
 
 4. PC内の保存先フォルダーを選択する.
@@ -75,7 +75,7 @@ cloneは最初の1回だけ行います.
 4. Repository URLへ次を入力する.
 
    ```text
-   https://github.com/HaruAbiko/yoneyama-lab-website.git
+   https://github.com/agu-yoneyama-lab/agu-yoneyama-lab.github.io.git
    ```
 
 5. Local pathで保存先を選ぶ.
@@ -280,7 +280,7 @@ pushしても，この時点では公開サイトへ反映されません.
 
 ### GitHubのブラウザー画面から作成する場合
 
-1. ブラウザーで<https://github.com/HaruAbiko/yoneyama-lab-website>を開く.
+1. ブラウザーで<https://github.com/agu-yoneyama-lab/agu-yoneyama-lab.github.io>を開く.
 2. **Compare & pull request**を選択する. 表示されない場合は**Pull requests → New pull request**を選択する.
 3. 次の組み合わせを確認する.
 
@@ -336,8 +336,8 @@ Pull Request作成後，管理者へURLを共有します. 管理者が内容を
 ### 初回clone
 
 ```bash
-git clone https://github.com/HaruAbiko/yoneyama-lab-website.git
-cd yoneyama-lab-website
+git clone https://github.com/agu-yoneyama-lab/agu-yoneyama-lab.github.io.git
+cd agu-yoneyama-lab.github.io
 ```
 
 ### 通常の編集開始
